@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./base.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <article class="menu-container">
+    <section class="btn">
+      <span>Menu</span>
+      <span>=</span>
+    </section>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Blogs</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Feedbook</a></li>
+    </ul>
+  </article>
+</body>
+<script>
+  const btn = document.querySelector('article>section');
+  const ul = document.querySelector('.menu-container ul');
+  const width = getComputedStyle(btn).width;
+  const height = getComputedStyle(ul).height;
+  console.log(height)
+  let bool = true
+  btn.onclick = function () {
+    if (bool) {
+      bool = false
+      btn.animate([
+        {
+          width: width,
+        },
+        {
+          width: "12rem"
+        }
+      ], {
+        duration: 400,
+        fill: 'forwards',
+        iterations: 1
+      })
+      ul.animate([
+        {
+          opacity: 0,
+          height: 0,
+        },
+        {
+          opacity: 1,
+          height: height,
+        }
+      ], {
+        duration: 400,
+        fill: 'forwards',
+        iterations: 1
+      })
+      return
+    }
+    if (!bool) {
+      bool = true
+      btn.animate([
+        {
+          width: "12rem",
+        },
+        {
+          width: width
+        }
+      ], {
+        duration: 400,
+        fill: 'forwards',
+        iterations: 1
+      })
+    }
+    ul.animate([
+      {
+        opacity: 1,
+        height: height,
+      },
+      {
+        opacity: 0,
+        height: 0
+      }
+    ], {
+      duration: 400,
+      fill: 'forwards',
+      iterations: 1
+    })
+
+    return
+  } 
+</script>
+
+</html>
