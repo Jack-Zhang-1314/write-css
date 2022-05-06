@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+    }
+
+    html,
+    body {
+      height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      background-color: rgb(92, 179, 216);
+      border-radius: 10px;
+      padding: 0.5rem 2rem;
+      font-weight: bold;
+    }
+
+    body {
+      display: grid;
+      grid-template-columns: auto 1fr;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      padding: 3.2rem 1rem;
+      gap: 1rem;
+      background-color: rgb(104, 107, 108);
+    }
+
+    #root {
+      padding: 2rem;
+      max-width: min(75ch, 90%);
+      margin-inline: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">about</a>
+    <a href="/services">services</a>
+    <a href="/contact">contact</a>
+  </nav>
+  <aside id="root"></aside>
+  <script src="app.js"></script>
+</body>
+
+</html>
