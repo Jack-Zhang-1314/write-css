@@ -46,13 +46,15 @@ const useRoute = (e) => {
 const renderPage = async () => {
   const local = location.pathname
   const route = routes[local] || routes["404"]
+  //* 获取路由文件(异步)
   const response = await fetch(route.page)
   const data = await response.text()
+  //* 渲染页面
   document.querySelector("#root").innerHTML = data
   document.title = route.title
   document.querySelector("meta[name=description]").setAttribute("content", route.description)
 }
 
 onpopstate = renderPage
-
-//renderPage()
+useRoute = useRoute
+renderPage()
